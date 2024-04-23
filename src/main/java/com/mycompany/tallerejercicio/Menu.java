@@ -28,7 +28,7 @@ public class Menu extends javax.swing.JFrame {
 
         añadir = new javax.swing.JButton();
         imprimir = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        eliminar = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,7 +47,12 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("eliminar valores");
+        eliminar.setText("eliminar valores");
+        eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("imprimir anteriores y proximos");
 
@@ -58,7 +63,7 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3)
+                    .addComponent(eliminar)
                     .addComponent(añadir))
                 .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -75,7 +80,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(imprimir))
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
+                    .addComponent(eliminar)
                     .addComponent(jButton4))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
@@ -93,6 +98,11 @@ public class Menu extends javax.swing.JFrame {
         String nombre=JOptionPane.showInputDialog("ingrese un nombre");
         lista.imprimmir(nombre);
     }//GEN-LAST:event_imprimirActionPerformed
+
+    private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
+        String nombre=JOptionPane.showInputDialog("ingrese el nombre");
+        lista.eliminar(nombre);
+    }//GEN-LAST:event_eliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -131,8 +141,8 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton añadir;
+    private javax.swing.JButton eliminar;
     private javax.swing.JButton imprimir;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     // End of variables declaration//GEN-END:variables
 }
