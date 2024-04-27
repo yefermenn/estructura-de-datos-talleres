@@ -4,9 +4,6 @@ public class Nodo {
     /**
      * @return the anterior
      */
-    public Nodo getAnterior() {
-        return anterior;
-    }
 
     /**
      * @param anterior the anterior to set
